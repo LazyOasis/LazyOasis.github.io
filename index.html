@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lazy aquarium</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="aquarium">
+        <div id="background-foreground"></div>
+        <canvas id="canvas-foreground" width="956" height="536"></canvas>
+
+        <div id="background-background"></div>
+        <canvas id="canvas-background" width="956" height="536"></canvas>
+    </div>
+
+    <script type="module">
+        import { listSprites, resources } from "./main";
+        import { breakLoop } from "./modul/Aquarium";
+
+        window.breakLoop = breakLoop;
+        let Aqua = { listSprites, resources };
+
+        window.Aqua = Aqua;
+    </script>
+</body>
+</html>

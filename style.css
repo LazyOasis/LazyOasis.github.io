@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+#aquarium {
+    width: 956px;
+    margin: auto;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+#aquarium > * {
+    position: absolute;
+}
+
+#background-foreground {
+    background: url(src/pics/foreground.png);
+    width: 956px;
+    height: 536px;
+    z-index: 69;
+}
+
+#canvas-foreground {
+    z-index: 70;
+}
+
+#background-background {
+    background: url(src/pics/background.png);
+    width: 956px;
+    height: 536px;
+    z-index: 42;
+}
+
+#canvas-background {
+    z-index: 43;
+}
