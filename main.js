@@ -1,7 +1,7 @@
-import * as resources from "./modul/resources";
-import Sprite from "./modul/Sprite";
-import * as Aquarium from "./modul/Aquarium";
-import { shuffle, randint } from "./modul/Utils";
+import * as resources from "./modul/resources.js";
+import Sprite from "./modul/Sprite.js";
+import * as Aquarium from "./modul/Aquarium.js";
+import { shuffle, randint } from "./modul/Utils.js";
 
 
 export const listSprites = Aquarium.listSprites;
