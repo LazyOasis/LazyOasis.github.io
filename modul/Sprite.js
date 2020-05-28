@@ -1,4 +1,4 @@
-import { fishes } from "./resources";
+import { fishes } from "./resources.js";
 
 
 export default class Sprite {
