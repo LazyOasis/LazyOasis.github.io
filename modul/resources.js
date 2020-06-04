@@ -3,30 +3,50 @@ export const fishes = {
         frames: 2,
         environment: "background",
         speed: 1,
+        extension: "gif",
     },
     colossus: {
         frames: 6,
         environment: "background",
         speed: 1,
+        extension: "gif",
     },
     greynurse: {
         frames: 10,
         environment: "background",
         speed: 1,
+        extension: "png",
     },
     panzertank: {
         frames: 3,
         environment: "foreground",
         speed: 1,
+        extension: "gif",
     },
     wtfhumanthing: {
         frames: 12,
         environment: "foreground",
         speed: 1,
+        extension: "png",
+    },
+    spidereel: {
+        frames: 7,
+        environment: "background",
+        speed: 2,
+        extension: "gif",
+    },
+    angerpuppy: {
+        frames: 4,
+        environment: "background",
+        speed: 1,
+        throttle: 20,
+        extension: "gif",
     },
 };
 
 export const fishCount = Object.keys(fishes).length;
+
+export const fishCards = {};
 
 let loaded = 0;
 let readyCallback;
@@ -42,6 +62,8 @@ for (let [name, fish] of Object.entries(fishes)) {
     fish.sheet.src = `src/fish/${name}.png`;
     fish.teehs = new Image;
     fish.teehs.src = `src/fish/${name}.png`;
+    fishCards[name] = new Image;
+    fishCards[name].src = `src/cards/${name}.${fish.extension}`;
 
     fish.sheet.onload = () => {
         loaded += 0.5;

@@ -23,12 +23,13 @@ const spawner = () => {
     let direction = Math.random() > 0.5;
     let spawnX = (direction) ? 960 : 10 - fishRes.width;
     let spawnY = (fishRes.environment === "background") ? randint(20, 500 - fishRes.height) : 520 - fishRes.height + randint(-10, 10);
+    let throttle = fishRes.throttle || 8;
 
-    let fish = new Sprite(fishRef, fishDeath, 8, spawnX, spawnY, direction);
+    let fish = new Sprite(fishRef, fishDeath, throttle, spawnX, spawnY, direction);
     Aquarium.addSprite(fish);
 
     let speed = (direction) ? -fishRes.speed : fishRes.speed;
-    fish.addForce("iamspeed", speed, 0, 0.5);
+    fish.addForce("base", speed, 0, 0.5);
 };
 
 resources.onReady(() => {

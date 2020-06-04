@@ -20,10 +20,25 @@ export default class Sprite {
         this.image = (flipped) ? this.teehs: this.sheet;
 
         this.forces = {};
+        this.pausedForces = {};
     }
 
     addForce(id, x, y, acceleration = 0.1) {
             this.forces[id] = { x, y, acceleration, currentAccel: 0 };
+    }
+
+    removeForce(id) {
+        delete this.forces[id];
+    }
+
+    pauseForce(id) {
+        this.pausedForces[id] = this.forces[id];
+        delete this.forces[id];
+    }
+
+    resumeForce(id) {
+        this.forces[id] = this.pausedForces[id];
+        delete this.pausedForces[id];
     }
 
     flip() {

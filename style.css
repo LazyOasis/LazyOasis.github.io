@@ -4,18 +4,54 @@
 }
 
 body {
-
+    background: #fee09d;
+    overflow: hidden;
 }
 
 #aquarium {
-    width: 956px;
+    width: 1350px;
+    height: 999px;
     margin: auto;
-    padding: 10px;
-    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
 #aquarium > * {
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#wallpaper {
+    background: url(src/pics/frame_stuff.png);
+    width: 999px;
+    height: 614px;
+}
+
+#info-cards {
+    pointer-events: none;
+    z-index: 350;
+    position: absolute;
+    top: 54px;
+    left: 200px;
+}
+
+#info-cards img {
+    display: none;
+    position: absolute;
+    width: 500px;
+    box-shadow: 7px 12px #0000007a;
+}
+
+#background-glass {
+    background: url(src/pics/glass.png) no-repeat;
+    width: 964px;
+    height: 544px;
+    position: absolute;
+    top: 54px;
+    z-index: 242;
+    pointer-events: none;
 }
 
 #background-foreground {
@@ -23,10 +59,12 @@ body {
     width: 956px;
     height: 536px;
     z-index: 69;
+    top: 54px;
 }
 
 #canvas-foreground {
     z-index: 70;
+    top: 54px;
 }
 
 #background-background {
@@ -34,8 +72,44 @@ body {
     width: 956px;
     height: 536px;
     z-index: 42;
+    top: 54px;
 }
 
 #canvas-background {
     z-index: 43;
+    top: 54px;
+}
+
+@media only screen and (min-width: 1500px) {
+    #aquarium {
+        margin-top: 110px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1500px) {
+    #aquarium {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        overflow: initial;
+    }
+    #aquarium {
+        width: 999px;
+        height: 1350px;
+        margin-top: 50px;
+    }
+
+    #info-cards {
+        top: 630px;
+        left: 0;
+    }
+
+    #info-cards img {
+        position: unset;
+        width: 840px;
+        margin: auto;
+    }
 }
