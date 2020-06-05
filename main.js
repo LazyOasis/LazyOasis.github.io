@@ -1,7 +1,9 @@
 import * as resources from "./modul/resources.js";
 import Sprite from "./modul/Sprite.js";
 import * as Aquarium from "./modul/Aquarium.js";
-import { shuffle, randint } from "./modul/Utils.js";
+import { shuffle, randint, grab } from "./modul/Utils.js";
+
+import { configuration } from "./config.js";
 
 
 export const listSprites = Aquarium.listSprites;
@@ -10,6 +12,17 @@ export { resources };
 
 const fishList = shuffle(Object.keys(resources.fishes));
 // fishList.push("borfish", "colossus", "greynurse", "panzertank", "wtfhumanthing");
+
+const bgSprite = grab("background-background-sprite");
+
+function spriter(sprite, frames, width, height) {
+    let inc = 0;
+
+    setInterval(() => {
+        sprite.style.backgroundPositionY = `${height * inc}px`;
+        if (++inc === frames) inc = 0;
+    }, configuration.animationSpeed);
+};
 
 const spawner = () => {
     if (fishList.length === 0) return;
@@ -35,4 +48,6 @@ const spawner = () => {
 resources.onReady(() => {
     Aquarium.gameLoop();
     setInterval(spawner, 5000);
+
+    spriter(bgSprite, 18, 956, 536);
 });
