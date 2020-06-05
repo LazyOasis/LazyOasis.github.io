@@ -76,8 +76,37 @@ body {
 }
 
 #canvas-background {
+    z-index: 44;
+    top: 54px;
+}
+
+#background-background-sprite {
+    background: url(src/pics/background-sheet.png);
+    width: 956px;
+    height: 536px;
     z-index: 43;
     top: 54px;
+}
+
+#aqua-discord {
+    position: fixed;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 910px;
+    z-index: -40;
+}
+
+#discord-thing {
+    float: left;
+    width: 710px;
+    margin-top: 20px;
+}
+
+#discord-logo {
+    width: 160px;
+    float: right;
 }
 
 @media only screen and (min-width: 1500px) {
@@ -88,7 +117,7 @@ body {
 
 @media only screen and (min-width: 650px) and (max-width: 1500px) {
     #aquarium {
-        margin-top: 90px;
+        margin-top: 30px;
     }
 }
 
