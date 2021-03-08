@@ -1,4 +1,4 @@
-import Wagon from "./modul/Wagon";
+import Wagon from "./modul/Wagon.js";
 
 
 export const wagons = [
