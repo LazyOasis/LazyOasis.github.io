@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oasis express</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div id="logo"></div>
+    <div id="frame"></div>
+    <div id="express">
+        <canvas id="train" width="640" height="360"></canvas>
+        <canvas id="particles" width="640" height="360"></canvas>
+        <div class="background" id="bg-dunes-fore"></div>
+        <div class="background" id="bg-tracks"></div>
+        <div class="background" id="bg-dunes-mid"></div>
+        <div class="background" id="bg-dunes-back"></div>
+        <div class="background" id="bg-skybox"></div>
+        <div class="background" id="bg-oasis"></div>
+        <div class="background" id="bg-skyoutsidethebox"></div>
+    </div>
+
+    <script type="module">
+        import { loadAssets, render, wagons, Game, compute, spriting, parallax } from "./main";
+        import { Smoker, loadSmokes } from "./modul/Smoker";
+        console.log(Game);
+
+        const smokeCanvas = document.getElementById("particles");
+        const smokeContext = smokeCanvas.getContext("2d");
+        const oasis = document.getElementById("bg-oasis");
+
+        const smoker = new Smoker(smokeContext);
+
+        let breakerSwitch = true;
+
+
+        function loop() {
+            if (breakerSwitch) {
+                requestAnimationFrame(loop);
+
+                render();
+                compute();
+            }
+        }
+
+        let int50, int100, int150, intOasis;
+        let running = false;
+        let oasisIndex = 0;
+
+        function toggle() {
+            if (running === false) {
+                breakerSwitch = true;
+                loop();
+
+                intOasis = setInterval(() => {
+                    oasis.style.backgroundPositionX = `${++oasisIndex * 360}px`;
+                }, 5000);
+                int150 = setInterval(() => {
+                    spriting();
+                }, 150);
+                int100 = setInterval(() => {
+                    smoker.emit();
+                    smoker.draw(~~Game.motion-50, 250);
+                }, 100);
+                int50 = setInterval(() => {
+                    parallax();
+                }, 50);
+                running = true;
+            } else {
+                breakerSwitch = false;
+                clearInterval(int50);
+                clearInterval(int100);
+                clearInterval(int150);
+                clearInterval(intOasis);
+                running = false;
+            }
+
+        }
+
+        loadAssets().then(() => {
+            return loadSmokes();
+        }).then(() => {
+            toggle();
+        });
+
+        window.toggle = toggle;
+    </script>
+</body>
+</html>
