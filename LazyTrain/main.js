@@ -11,6 +11,7 @@ export const wagons = [
     { ref: "finboror", frames: 1 },
     { ref: "wildcard", frames: 1 },
     { ref: "pixelle", frames: 1 },
+    { ref: "lazy", frames: 9 },,
 ];
 
 for (let i = wagons.length - 1; i > 0; --i) {
