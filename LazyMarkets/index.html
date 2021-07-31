@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oasis Night Market</title>
+
+    <link rel="stylesheet" href="stylus.css" type="text/css">
+    <script type="module" defer>
+        import { startLoop, stopLoop } from "./omnis";
+
+        startLoop();
+    </script>
+</head>
+<body>
+<div id="hideout">
+    <div id="bubble">
+    </div>
+</div>
+<div id="wrapper">
+    <div id="game">
+        <div id="megamask">
+            <div id="mask-loading">
+                <img src="pics/loading.gif">
+            </div>
+            <div id="mask-text">
+                move around with the arrow keys<br>press [e] to interact with shopkeepers<br>press [enter] to continue
+            </div>
+        </div>
+        <div id="layer-bubbles"></div>
+        <canvas id="layer-main" width="3200" height="360"></canvas>
+        <canvas id="layer-ground" width="3200" height="360"></canvas>
+        <div id="layer-back"></div>
+        <canvas id="layer-starry" width="3200" height="360"></canvas>
+    </div>
+</div>
+</body>
+</html>
