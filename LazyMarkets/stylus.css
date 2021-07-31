@@ -61,6 +61,7 @@ body {
     left: 0;
     right: 0;
     transform: translateY(-50%);
+    scroll-behavior: auto;
 }
 
 #game {
@@ -74,6 +75,7 @@ body {
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-crisp-edges;
+    scroll-behavior: auto;
 }
 
 #megamask, #layer-bubbles, #layer-main, #layer-ground, #layer-back, #layer-starry {
