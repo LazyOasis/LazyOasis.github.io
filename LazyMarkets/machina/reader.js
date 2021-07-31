@@ -18,7 +18,7 @@ const events = {
         bubbleOffset: [-30, 210]
     },
     agent:  {
-        text: "privyet brat, are you looking for weapons? you want avtomat kalashinikova? i got you comrade as long as you have enough rubels we only sell veapons from the motherland, so no capitalistic bullshit, we sell ak47's akms ak74's zastava m70's finnish rk62's and much more! would you wnana buy a fine tool for combat? so tell me what do you want",
+        text: "privyet brat, are you looking for weapons? you want avtomat kalashnikova? i got you comrade as long as you have enough rubels we only sell veapons from the motherland, so no capitalistic bullshit, we sell ak47's akms ak74's zastava m70's finnish rk62's and much more! would you wanna buy a fine tool for combat? so tell me what do you want",
         size: 80,
         offset: 1344,
         bubbleOffset: [-20, 110]
