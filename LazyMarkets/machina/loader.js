@@ -1,6 +1,6 @@
-import { Sprite } from "./drawables/Sprite";
-import { PlayerSprite } from "./drawables/PlayerSprite";
-import { shuffle } from "./utils";
+import { Sprite } from "./drawables/Sprite.js";
+import { PlayerSprite } from "./drawables/PlayerSprite.js";
+import { shuffle } from "./utils.js";
 
 
 const stalls = {
