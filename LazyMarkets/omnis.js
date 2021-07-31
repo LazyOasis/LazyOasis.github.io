@@ -1,6 +1,6 @@
-import { loadSprites, loadTerrain, loadPlayer } from "./machina/loader";
-import { randint, sample } from "./machina/utils";
-import { readyReader, commitAction, resetAction } from "./machina/reader";
+import { loadSprites, loadTerrain, loadPlayer } from "./machina/loader.js";
+import { randint, sample } from "./machina/utils.js";
+import { readyReader, commitAction, resetAction } from "./machina/reader.js";
 
 
 const canvasMain = document.getElementById("layer-main");
